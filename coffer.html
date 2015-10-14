@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.mmenu.css"/>
+		<link rel="stylesheet" type="text/css" href="css/jquery.mmenu.all.css"/>
+		<style>
+		body
+		{
+			background: #1f1a17;
+			min-width: 370px;
+		}
+		
+		.content
+		{
+			position: fixed;
+			top: 0px;
+			left: 0px;
+		}
+			
+		
+		
+		.hh
+		{
+			list-style: none !important;
+			margin-left:-15px !important;
+			padding: 0px;
+		}
+		
+		.hh a
+		{
+			color: #d6d6d6 !important;
+		}
+		
+		.note
+		{
+			margin: 10px auto;
+			margin-top: 50px;
+			line-height: 20px;
+		}
+		
+		.note h3
+		{
+			padding: 0px 20px;
+		}
+		
+		
+		.note ul
+		{
+			margin-top: 20px;
+		}
+		
+		.note ul li
+		{
+			float: left;
+			width: 30%;
+			list-style: none;
+			margin: 20px 0px 20px 10px;
+		}
+		
+		.note ul li img
+		{
+			width: 100%;
+		}
+		
+		.note ul li p
+		{
+			font-size: 16px;
+			text-align: center;
+		}
+		
+		.alert
+		{
+			width: 80%;
+			height: 200px;
+			position: inherit;
+			background: #efe9d9;
+			margin-left: 10%;
+			border-radius: 5px;
+			top: 30%;
+			display: none;
+		}
+		
+		.alert span
+		{
+			color: #000000;
+			font-size: 20px;
+			position:relative;
+			float: right;
+			margin-top: -55px;
+			margin-right: 10px;
+		}
+		
+		.alert img
+		{
+			width: 100px;
+			margin: 0px auto;
+			display: block;
+			margin-top: -50px;
+		}
+		
+		.alert p
+		{
+			color: #000;
+			margin: 0px 15px 0px 10px;
+			font-size: 16px;
+			line-height: 25px;
+			text-align: center;
+		}
+		
+		.alert button
+		{
+			border: none;
+			background: #cbae76;
+			color: #F3F3F3;
+			width: 80%;
+			padding: 10px 0px;
+			border-radius: 5px;
+			margin: 20px auto;
+			display: block;
+			
+		}
+		</style>
+	</head>
+	<body >
+		
+		<nav id="menu">
+				<ul>
+					<li><a href="#"><span class="iconfont icon-home"></span> 微首页</a></li>
+					<li><a href="#">关于我们</a>
+						<ul class="Inset hh">
+							<li><a href="#">&gt; 品牌故事</a></li>
+							<li><a href="coffer.html">&gt; 我们的咖啡师</a></li>
+						</ul>
+					</li>
+					
+					<li><a href="#">饮品和美食</a>
+						<ul class="Inset hh">
+							<li><a href="#">&gt; 醇香咖啡</a></li>
+							<li><a href="#">&gt; 饮品</a></li>
+							<li><a href="#">&gt; 美食</a></li>
+						</ul>
+					</li>
+					<li><a href="map.html">查找门店</a></li>
+					<li><a href="#">澳洲咖啡文化</a></li>
+					<li><a href="news.html">新闻中心</a></li>
+					<li><a href="#">联系我们</a></li>
+					<li><a href="joinUs.html">加入我们</a></li>
+				</ul>
+		</nav>
+		
+		<div class="content">
+			<div class="head">
+				<a href="#menu" class="pull-left"><span class="iconfont icon-list"></span></a>
+				<p class="pull-center">我们的咖啡师</p>
+				<a href="#" class="pull-right"><span class="iconfont icon-yonghu"></span></a>
+			</div>
+			
+			<div class="note">
+				<ul>
+					<li>
+						<img src="img/1.png" alt="" />
+						<p>Summer</p>
+					</li>
+					<li>
+						<img src="img/2.png" alt="" />
+						<p>Tiger</p>
+					</li>
+					<li>
+						<img src="img/3.png" alt="" />
+						<p>Jacky</p>
+					</li>
+					<li>
+						<img src="img/2.png" alt="" />
+						<p>Leo</p>
+					</li>
+					<li>
+						<img src="img/3.png" alt="" />
+						<p>Summer</p>
+					</li>
+					<li>
+						<img src="img/1.png" alt="" />
+						<p>Summer</p>
+					</li>
+					<li>
+						<img src="img/3.png" alt="" />
+						<p>Summer</p>
+					</li>
+					<li>
+						<img src="img/2.png" alt="" />
+						<p>Summer</p>
+					</li>
+					<li>
+						<img src="img/3.png" alt="" />
+						<p>Summer</p>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="alert">
+				<img src="img/1.png"/>
+				<span>X</span>
+				<p>Hello,I'm summer,I'm a Barista in CAFE CERRE !</p>
+				<button>关注微信</button>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.mmenu.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#menu").mmenu({
+			 extensions: ["theme-dark","pageshadow"]
+		});
+		
+		$(".note ul li").on("click",function(){
+			var src=$(this).find("img").prop("src");
+			$(".alert img").attr("src",src);
+			$(".alert").fadeIn(300);
+		})
+		
+		$("body").on("click",function(e){
+			
+			e.stopPropagation();
+		})
+		
+		$(".alert span").on("click",function(){
+			$(".alert").fadeOut(300);
+		})
+	})
+	
+</script>

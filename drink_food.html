@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<style type="text/css">
+		.content
+		{
+			background: url(img/drink.jpg);
+			background-size: cover;
+		}
+			
+		.content .note{
+			width: 230px;
+			margin-top: 50px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+		.content .note img
+		{
+			width: 130px;
+			margin: 0px auto;
+			margin:0px 20%;
+			margin-bottom: 60px;
+		}
+		
+		.content .note a>div
+		{
+			width: 100%;
+			height:55px;
+			background: rgba(174,156,104,0.2);
+			margin-top: 5px;
+			border-radius: 5px;
+			color: #AE9C68;
+		}
+		
+		
+		.content .note a>div>span
+		{
+			display: block;
+			float: left; 
+		}
+		
+		.content .note a>div>span:first-child
+		{
+			height: 100%;
+			margin-left: 50px;
+			margin-top: 5px;
+		}
+		
+		.content .note a>div>span:last-child
+		{
+			margin-top: 10px;
+			margin-left: 20px;
+			line-height: 18px;
+		}
+		
+		.content .note a>div>span>span
+		{
+			font-weight: bold;
+		 	font-size: 14px;
+		 	color:#efdda9
+		}
+		
+		.coffee-iconfont img
+		{
+			width: 31px !important;
+		}
+		
+		.coffee-btm img
+		{
+			width: 12px;
+		}
+		
+		.bottom-bar a
+		{
+			color: #CBAE76;
+			text-decoration: none;
+			line-height: 10px;
+		}
+		
+		.bottom-bar
+		{
+			position: absolute;
+			bottom: 0px;
+			background: #383431;
+			padding: 10px 0px;
+			width: 100%;
+		}
+		
+		</style>
+	</head>
+	<body>
+		<div class="content">
+			<div class="note">
+				<img src="img/logo.png"/>
+				<a href="#">
+					<div>
+						<span class="coffee-iconfont">
+							<img src="img/s_07.png"/>
+						</span>
+						<span><span>Our Coffee</span><br/>醇香咖啡</span>
+					</div>
+				</a>
+				
+				<a href="#">
+					<div>
+						<span class="coffee-iconfont">
+							<img src="img/s_13.png" style="margin-top: -3px;"/>
+						</span>
+						<span><span>Our Beverages</span><br/>饮品</span>
+					</div>
+				</a>
+				
+				<a href="#">
+					<div>
+						<span class="coffee-iconfont">
+							<img src="img/s_02.png"/>
+						</span>
+						<span><span>Our Food</span><br/>美食</span>
+					</div>
+				</a>
+			</div>
+			
+			<div class="bottom-bar">
+				<div>
+					<a href="#">
+						<span class="coffee-btm">
+							<img src="img/s_04.png"/>
+						</span>
+						微首页
+					</a>
+					<a href="#">
+						<span class="coffee-btm">
+							<img src="img/s_08.png"/>
+						</span>
+						加入我们
+					</a>
+					<a href="#">
+						<span class="coffee-btm">
+							<img src="img/s_10.png"/>
+						</span>
+						查找门店
+					</a>
+					<a href="#">
+						<span class="coffee-btm">
+							<img src="img/s_11.png"/>
+						</span>
+						一键拨号
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+	var _coffee={
+		_menu:function()
+		{
+			var $width=$(window).width();
+			var $a_width=$(".bottom-bar div a").width();
+			var $pd=($width/4-$a_width)/2;
+			$(".bottom-bar div a").css({
+				"padding-left":$pd+"px",
+				"padding-right":$pd+"px"
+			})
+		} 
+	}
+	
+	_coffee._menu();
+</script>
+

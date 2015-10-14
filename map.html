@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/jquery.mmenu.css"/>
+		<link rel="stylesheet" type="text/css" href="css/jquery.mmenu.all.css"/>
+		<link rel="stylesheet" href="css/style.css" />
+		<style>
+		body
+		{
+		background: #1f1a17;
+		}
+			
+		
+		.hh
+		{
+			list-style: none !important;
+			margin-left:-15px !important;
+			padding: 0px;
+		}
+		
+		.hh a
+		{
+			color: #d6d6d6 !important;
+		}
+		
+		
+		
+		
+		.alert
+		{
+			position: fixed;
+			width: 170px;
+			height: 100px;
+			background: rgba(56,52,49,0.8);
+			padding: 20px 0px 20px 5px;
+			z-index: 999999;
+			border-radius: 5px;
+			top: 45px;
+			display: none;
+		}
+		
+		.alert ul
+		{
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+		}
+		
+		
+		.alert ul li a
+		{
+			text-decoration: none;
+			color: #E7D5A3;
+			display: block;
+			padding: 5px 0px 5px 5px;
+			margin-right: 5px;
+			margin-top: 5px;
+		}
+		
+		.alert ul li .active
+		{
+			background: #1F1A17;
+			border-radius: 3px;
+		}
+		
+		.alert>span
+		{
+			color:rgba(56,52,49,0.5);
+			display: block;
+			width: 15px;
+			height: 15px;
+			margin: 0px auto;
+			margin-top: -29px;
+			text-align: center;
+		}
+		
+		#allmap {
+			position: fixed;
+			width: 100%;
+			height: 800px;
+			overflow: hidden;
+			margin:0;
+			font-family:"微软雅黑";
+			z-index: 100;
+			}
+			
+		.card
+		{
+			position: fixed;
+			width: 90%;
+			height: 150px;
+			background: #383431;
+			bottom: 10px;
+			left: 1%;
+			right: 1%;
+			border-radius: 5px;
+			padding: 10px;
+		}
+		
+		.alerts
+		{
+			background: rgba(0,0,0,0.4);
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			z-index: 999999;
+		}
+		
+		.alerts p
+		{
+			line-height:30px;
+			text-align: center;
+			display: block;
+			margin: 20% auto;
+			width: 300px;
+			font-size: 16px;
+			background: #CBAE76;
+			border-radius: 3px;
+			color: #F3F3F3;
+		}
+		</style>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=8E65B6903b385accb4adf2c04fa979b2"></script>
+	</head>
+	<body >
+		<div id="alertMap">
+			
+		</div>
+		<nav id="menu">
+				<ul>
+					<li><a href="#"><span class="iconfont icon-home"></span> 微首页</a></li>
+					<li><a href="#">关于我们</a>
+						<ul class="Inset hh">
+							<li><a href="#">&gt; 品牌故事</a></li>
+							<li><a href="#">&gt; 我们的咖啡师</a></li>
+						</ul>
+					</li>
+					
+					<li><a href="#">饮品和美食</a>
+						<ul class="Inset hh">
+							<li><a href="#" >&gt; 醇香咖啡</a></li>
+							<li><a href="#">&gt; 饮品</a></li>
+							<li><a href="#">&gt; 美食</a></li>
+						</ul>
+					</li>
+					<li><a href="#">查找门店</a></li>
+					<li><a href="#">澳洲咖啡文化</a></li>
+					<li><a href="#">新闻中心</a></li>
+					<li><a href="#">联系我们</a></li>
+					<li><a href="#">加入我们</a></li>
+				</ul>
+		</nav>
+
+		
+		
+		<div class="content">
+			<div class="head">
+				<a href="#menu" class="pull-left"><span class="iconfont icon-list"></span></a>
+				<p class="pull-center">选择门店 <span class="iconfont icon-unfold" id="sel"></span></p>
+				<a href="#" class="pull-right"><span class="iconfont icon-yonghu"></span></a>
+			</div>
+			
+
+			<div id="allmap">
+				
+			</div>
+			
+			<div class="alerts">
+				<p>123123</p>
+			</div>
+			
+			<div class="card">
+				<p class="p1">CAFE CERRE总店</p>
+				<p class="p2">四川成都高新九兴大道14号3栋102</p>
+				<hr color="#AE9C68" size="1px"/>
+				<p class="p3"><a href="#">搜周边</a><a href="javascript:DriveMap()">到这里去</a></p>
+			</div>
+			
+			<div class="alert">
+				<span class="iconfont icon-shangsanjiao"></span>
+				<ul>
+					<li><a href="javascript:void(0)" onclick="mapSet(116.404, 39.915)" class="active">CAFE CERRE 总店</a></li>
+					<li><a href="javascript:void(0)" onclick="mapSet(104.087889,30.649877)">四川大学分店</a></li>
+					<li><a href="javascript:void(0)" onclick="mapSet(104.084439,30.768112)">交通大学分店</a></li>
+				</ul>
+			</div>
+		</div>
+
+	</body>
+</html>
+<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.mmenu.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+
+	var map=null;
+	var Pos={
+		lng:null,
+		lat:null
+	};
+	var coffee={
+		lng:null,
+		lat:null
+	};
+	
+	
+	var PosArray=[];
+	var alert_notice=$(".alerts p");
+	$(function(){	
+		$("#menu").mmenu({
+			 extensions: ["theme-dark","pageshadow"]
+		}); 
+		
+		
+		$("#sel,.pull-center").on("click",function(e){
+			var x=e.offsetX;
+			$(".alert").css("left",x-100).fadeIn(300);
+			e.stopPropagation();
+		})
+		
+		$(".alert ul li a").on("mouseover",function(){
+			$(this).addClass("active");
+		})
+		
+		$(".alert ul li a").on("mouseout",function(){
+			$(this).removeClass("active");
+		})
+		
+		$("body").on("click",function(){
+			$(".alert").fadeOut(300);
+		})
+		
+		
+		map = new BMap.Map("allmap");
+		map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
+		map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+		map.setCurrentCity("成都");          // 设置地图显示的城市 此项是必须设置的
+		map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+		map.setMapStyle({style:"hardedge"});
+		alert_notice.text("正在初始化地图..");
+		if(map!=null)
+		{
+			var geolocation = new BMap.Geolocation();
+			geolocation.getCurrentPosition(function(r){
+			if(this.getStatus() == BMAP_STATUS_SUCCESS){
+						Pos.lng=r.point.lng;
+						Pos.lat=r.point.lat; 
+						alert_notice.text("获取坐标成功..");
+						alert_notice.parent().fadeOut(500);
+				}
+				else {
+					alert('failed'+this.getStatus());
+				}        
+			},{enableHighAccuracy: true});
+		}
+	})
+	
+	function mapSet(lat,lon)
+	{
+		var point=new BMap.Point(lat,lon);
+		map.setCenter(point);
+		map.setZoom(18);
+		var marker = new BMap.Marker(point);  // 创建标注
+		map.addOverlay(marker);               // 将标注添加到地图中
+		marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+		coffee.lng=lat;
+		coffee.lat=lon;
+		//SearchMap();
+		//DriveMap();
+	}
+	
+	
+	function SearchMap()
+	{
+		var myKeys = ["酒店", "加油站","银行","超市","加油站","写字楼","公交站"];
+		var options={
+			onSearchComplete:function(res)
+			{
+				PosArray=[];
+				if(local.getStatus()==BMAP_STATUS_SUCCESS)
+				{
+					for(var i=0;i<res.length;i++)
+					{
+						for(var j=0;j<res[i].Uq.length;j++)
+						{
+							var obj={
+								title:res[i].Uq[j].title,
+								lng:res[i].Uq[j].point.lng,
+								lat:res[i].Uq[j].point.lat
+							}
+							
+							PosArray.push(obj);
+						}
+					}
+					
+					console.log(PosArray);
+					LoadMarker();
+				}
+			}
+		};
+		
+		var local = new BMap.LocalSearch(map,options);
+		local.searchInBounds(myKeys, map.getBounds(),1500);
+	}
+	
+	function DriveMap()
+	{
+		var p1=new BMap.Point(Pos.lng,Pos.lat);
+		var p2=new BMap.Point(coffee.lng,coffee.lat);
+		var driving = new BMap.DrivingRoute(map, {renderOptions:{map: map, autoViewport: true}});
+		driving.search(p1, p2);
+		//console.log(Pos);
+	}
+	
+	
+	function LoadMarker()
+	{
+		if(PosArray.length>0)
+		{
+			for(var a in PosArray)
+			{
+				var marker=new BMap.Marker(new BMap.Point(PosArray[a].lng,PosArray[a].lat));				
+				marker.addEventListener("click",function(){
+					var pos=marker.getPosition();
+					 ;
+				});
+				map.addOverlay(marker);
+			}
+		}
+	}
+	
+</script>
