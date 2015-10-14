@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.mmenu.css"/>
+		<link rel="stylesheet" type="text/css" href="css/jquery.mmenu.all.css"/>
+		<style>
+		body
+		{
+			background: #1f1a17;
+			min-width: 320px;
+		}
+		
+		.content
+		{
+			position: fixed;
+			top: 0px;
+			left: 0px;
+		}
+			
+		
+		
+		.hh
+		{
+			list-style: none !important;
+			margin-left:-15px !important;
+			padding: 0px;
+		}
+		
+		.hh a
+		{
+			color: #d6d6d6 !important;
+		}
+		
+		.note
+		{
+			margin: 50px 10px 0px 10px;
+			line-height: 20px;
+			
+		}
+		
+		.note
+		{
+			min-width: 320px;
+			overflow: hidden;
+		}
+		
+		.note .bannar{}
+		
+		.note .bannar img
+		{
+			width: 100%;
+		}
+		
+		.note .bannar div
+		{
+			position: relative;
+			top: -105px;
+			background: rgba(0,0,0,0.3);
+			width: 100%;
+			height: 100px;
+			overflow: hidden;
+		}
+		
+		
+		.p2,.p2-s
+		{
+			margin: 0px 10px;
+			padding: 5px 0px ;
+		}
+		
+		.note .list
+		{
+			margin-top: -100px;
+		}
+		
+		.note .list li img
+		{
+			width: 140px;
+		}
+		
+		.note .list li img,.note .list li span,.note .list li
+		{
+			float: left;
+		}
+		
+		.note .list li
+		{
+			border-bottom: 1px solid #E7D5A3;
+			padding: 15px 0px;
+			width: 320px;
+		}
+		
+		
+		.note .list li span
+		{
+			width: 160px;
+			margin-left: 10px;
+			font-size: 12px;
+		}
+		
+		.note .list li span:nth-child(2)
+		{
+			font-size: 16px;
+			font-weight: bold;
+			margin-bottom: 5px;
+			margin-right: 5px;			
+		}
+		
+		.note .list li span:nth-child(3)
+		{
+			height: 55px;
+			overflow: hidden;
+		}
+		
+		#menu
+		{
+			font-family:"微软雅黑";
+		}
+		</style>
+	</head>
+	<body >
+		
+		<nav id="menu">
+				<ul>
+					<li><a href="#"><span class="iconfont icon-home"></span> 微首页</a></li>
+					<li><a href="#">关于我们</a>
+						<ul class="Inset hh">
+							<li><a href="#">&gt; 品牌故事</a></li>
+							<li><a href="#">&gt; 我们的咖啡师</a></li>
+						</ul>
+					</li>
+					
+					<li><a href="#">饮品和美食</a>
+						<ul class="Inset hh">
+							<li><a href="#">&gt; 醇香咖啡</a></li>
+							<li><a href="#">&gt; 饮品</a></li>
+							<li><a href="#">&gt; 美食</a></li>
+						</ul>
+					</li>
+					<li><a href="#">查找门店</a></li>
+					<li><a href="#">澳洲咖啡文化</a></li>
+					<li><a href="#">新闻中心</a></li>
+					<li><a href="#">联系我们</a></li>
+					<li><a href="#">加入我们</a></li>
+				</ul>
+		</nav>
+		
+		<div class="content">
+			<div class="head">
+				<a href="#menu" class="pull-left"><span class="iconfont icon-list"></span></a>
+				<p class="pull-center">新闻中心</p>
+				<a href="#" class="pull-right"><span class="iconfont icon-yonghu"></span></a>
+			</div>
+			
+			<div class="note">
+				<div class="bannar">
+					<img src="img/news.jpg"/>
+					<div>
+						<p class="p2">2015年,CAFE CERRE 入驻成都</p>
+						<p class="p2-s">我叫Cafe Cerre,我来自澳洲，我致力于从2015年开始在中国的咖啡市场的开拓和发展，我热爱咖啡，我愿意为每一位中国的顾客提...</p>
+					</div> 
+				</div>
+				
+				<div class="list">
+					<ul>
+						<li>
+							<img src="img/newss.jpg" />
+							<span>澳大利亚咖啡文化</span>
+							<span>微软创始人比尔盖茨有一句名言是，电视电影里出现的咖啡馆聚会场景并非是真实人生，因为现实生活中每个人都要离开咖啡馆去工作...</span>
+						</li>
+						<li>
+							<img src="img/newss.jpg" />
+							<span>澳大利亚咖啡文化</span>
+							<span>微软创始人比尔盖茨有一句名言是，电视电影里出现的咖啡馆聚会场景并非是真实人生，因为现实生活中每个人都要离开咖啡馆去工作...</span>
+						</li>
+						<li>
+							<img src="img/newss.jpg" />
+							<span>澳大利亚咖啡文化</span>
+							<span>微软创始人比尔盖茨有一句名言是，电视电影里出现的咖啡馆聚会场景并非是真实人生，因为现实生活中每个人都要离开咖啡馆去工作...</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.mmenu.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#menu").mmenu({
+			 extensions: ["theme-dark","pageshadow"]
+		});
+	})
+	
+</script>
